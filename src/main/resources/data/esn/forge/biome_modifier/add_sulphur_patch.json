@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_river",
+  "features": "esn:sulphur_patch_placed",
+  "step": "lakes"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.65,
+  "ingredient": {
+    "item": "esn:extracted_savon"
+  },
+  "result": "esn:soap"
+}
