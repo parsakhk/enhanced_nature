@@ -34,6 +34,9 @@ public class ModConfiguredFeatures {
     public static final Supplier<List<OreConfiguration.TargetBlockState>> SULPHUR_PERIODETITE_PATCH = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(new BlockMatchTest(ModBlocks.PERIODETITE.get()), ModBlocks.SULPHUR.get().defaultBlockState())));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> LIMESTONE_PATCH = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.NATURAL_STONE, ModBlocks.LIMESTONE.get().defaultBlockState())));
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> PERIODETITE = CONFIGURED_FEATURES.register("periodetite_patch",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PERIODETITE_PATCH.get(),64)));
 
@@ -42,6 +45,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SULPHUR = CONFIGURED_FEATURES.register("sulphur_patch",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SULPHUR_PERIODETITE_PATCH.get(),56)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> LIMESTONE = CONFIGURED_FEATURES.register("limestone",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(LIMESTONE_PATCH.get(),33)));
 
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SAGUARO_CACTUS = CONFIGURED_FEATURES.register("saguaro_cactus",

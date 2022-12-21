@@ -1,8 +1,12 @@
 {
-  "block.esn.periodetite": "Periodetite ",
-  "block.esn.savonist": "Savonist ",
+  "block.esn.periodetite": "Periodetite",
+  "block.esn.limestone": "Lime Stone",
+  "block.esn.savonist": "Savonist",
   "block.esn.sulphur": "Sulphur",
   "block.esn.quirckly_pear_cactus": "Quirckly Pear Cactus",
   "item.esn.extracted_savon": "Extracted Savon ",
-  "item.esn.soap": "Soap"
+  "item.esn.soap": "Soap",
+  "item.esn.cooked_lime_ash": "Cooked Lime Ash",
+  "item.esn.lime_sugar": "Lime Sugar",
+  "item.esn.brown_sugar": "Brown Sugar"
 }

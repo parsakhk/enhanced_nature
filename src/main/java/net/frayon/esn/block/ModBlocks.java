@@ -1,6 +1,7 @@
 package net.frayon.esn.block;
 
 import net.frayon.esn.NaturePlus;
+import net.frayon.esn.block.block.LimestoneBlock;
 import net.frayon.esn.item.ModItemGroups;
 import net.frayon.esn.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -27,6 +28,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SAVONIST = registerBlock("savonist",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).explosionResistance(19f).requiresCorrectToolForDrops())
+            , ModItemGroups.NATURE_PLUS_TAB);
+
+    public static final RegistryObject<Block> LIMESTONE = registerBlock("limestone",
+            () -> new LimestoneBlock(BlockBehaviour.Properties.of(Material.STONE).strength(4f).explosionResistance(3f).requiresCorrectToolForDrops())
             , ModItemGroups.NATURE_PLUS_TAB);
 
     public static final RegistryObject<Block> SULPHUR = registerBlock("sulphur",

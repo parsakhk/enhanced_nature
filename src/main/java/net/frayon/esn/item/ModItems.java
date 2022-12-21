@@ -18,6 +18,15 @@ public class ModItems {
     public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
             () -> new Item(new Item.Properties().tab(ModItemGroups.NATURE_PLUS_TAB)));
 
+    public static final RegistryObject<Item> COOKED_LIME_ASH = ITEMS.register("cooked_lime_ash",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(ModItemGroups.NATURE_PLUS_TAB)));
+
+    public static final RegistryObject<Item> LIME_SUGAR = ITEMS.register("lime_sugar",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(ModItemGroups.NATURE_PLUS_TAB)));
+
+    public static final RegistryObject<Item> BROWN_SUGAR = ITEMS.register("brown_sugar",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(ModItemGroups.NATURE_PLUS_TAB)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

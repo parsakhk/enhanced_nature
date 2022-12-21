@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 120,
+  "experience": 0.14,
+  "ingredient": {
+    "item": "esn:limestone"
+  },
+  "result": "esn:cooked_lime_ash"
+}

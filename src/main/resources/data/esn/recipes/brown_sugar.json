@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_bean"
+    },
+    {
+      "item": "esn:lime_sugar"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "esn:brown_sugar"
+  }
+}

@@ -23,7 +23,12 @@ public class ModPlacedFeature {
     public static final RegistryObject<PlacedFeature> SULPHUR_PATCH_PLACED = PLACED_FEATURES.register("sulphur_patch_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SULPHUR.getHolder().get(),
                     commonOrePlacement(42, // VeinsPerChunk
-                            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(210)))));
+                            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-190), VerticalAnchor.aboveBottom(310)))));
+
+    public static final RegistryObject<PlacedFeature> LIMESTONE_PLACED = PLACED_FEATURES.register("limestone_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.LIMESTONE.getHolder().get(),
+                    commonOrePlacement(54, // VeinsPerChunk
+                            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-190), VerticalAnchor.aboveBottom(120)))));
 
     public static final RegistryObject<PlacedFeature> SAVONIST_PATCH_PLACED = PLACED_FEATURES.register("savonist_patch_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SAVONIST.getHolder().get(),
