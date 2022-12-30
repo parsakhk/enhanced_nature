@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "esn:block/curatella_log_top",
+    "side": "esn:block/curatella_log"
+  }
+}

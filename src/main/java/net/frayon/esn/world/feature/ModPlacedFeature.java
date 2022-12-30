@@ -1,8 +1,10 @@
 package net.frayon.esn.world.feature;
 
 import net.frayon.esn.NaturePlus;
+import net.frayon.esn.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,6 +40,15 @@ public class ModPlacedFeature {
     public static final RegistryObject<PlacedFeature> SAGUARO_PLACED = PLACED_FEATURES.register("saguaro_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SAGUARO_CACTUS.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(16),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+
+    public static final RegistryObject<PlacedFeature> CURATELLA_CHECKED = PLACED_FEATURES.register("curatella_checked",
+            () -> new PlacedFeature(ModConfiguredFeatures.CURATELLA.getHolder().get(),
+                    List.of(PlacementUtils.filteredByBlockSurvival(ModBlocks.CURATELLA_SAPLING.get()))));
+
+    public static final RegistryObject<PlacedFeature> CURATELLA_PLACED = PLACED_FEATURES.register("curatella_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CURATELLA_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

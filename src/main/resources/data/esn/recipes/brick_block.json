@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:cocoa_beans"
+      "item": "minecraft:clay_ball"
     },
     {
-      "item": "esn:lime_sugar"
+      "item": "esn:cooked_lime_ash"
     }
   ],
   "result": {
     "count": 3,
-    "item": "esn:brown_sugar"
+    "item": "minecraft:bricks"
   }
 }

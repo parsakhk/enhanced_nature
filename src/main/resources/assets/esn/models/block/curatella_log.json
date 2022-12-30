@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "esn:block/curatella_log_top",
+    "side": "esn:block/curatella_log"
+  }
+}

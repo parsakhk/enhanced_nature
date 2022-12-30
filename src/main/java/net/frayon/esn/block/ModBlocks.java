@@ -2,13 +2,20 @@ package net.frayon.esn.block;
 
 import net.frayon.esn.NaturePlus;
 import net.frayon.esn.block.block.LimestoneBlock;
+import net.frayon.esn.block.block.RotateablePillarBlocks;
+import net.frayon.esn.block.block.SaguaroBlock;
 import net.frayon.esn.item.ModItemGroups;
 import net.frayon.esn.item.ModItems;
+import net.frayon.esn.world.feature.tree.CuratellaTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -38,8 +45,37 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2f).explosionResistance(3f).requiresCorrectToolForDrops().instabreak())
             , ModItemGroups.NATURE_PLUS_TAB);
 
+    public static final RegistryObject<Block> CURATELLA_LOG = registerBlock("curatella_log",
+            () -> new RotateablePillarBlocks(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops())
+            , ModItemGroups.NATURE_PLUS_TAB);
+    public static final RegistryObject<Block> CURATELLA_PLANKS = registerBlock("curatella_planks",
+            () -> new RotateablePillarBlocks(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()) {
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            }
+            , ModItemGroups.NATURE_PLUS_TAB);
+    public static final RegistryObject<Block> CURATELLA_LEAVES = registerBlock("curatella_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).requiresCorrectToolForDrops())
+            , ModItemGroups.NATURE_PLUS_TAB);
+    public static final RegistryObject<Block> CURATELLA_SAPLING = registerBlock("curatella_sapling",
+            () -> new SaplingBlock(new CuratellaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).requiresCorrectToolForDrops())
+            , ModItemGroups.NATURE_PLUS_TAB);
+
+
     public static final RegistryObject<Block> SAGUARO_CACTUS = registerBlock("saguaro_cactus",
-            () -> new CactusBlock(BlockBehaviour.Properties.of(Material.CACTUS).instabreak())
+            () -> new SaguaroBlock(BlockBehaviour.Properties.of(Material.CACTUS).instabreak())
             , ModItemGroups.NATURE_PLUS_TAB);
 
     public static final RegistryObject<Block> POTTED_SAGUARO_CACTUS = BLOCKS.register("potted_saguaro_cactus",
